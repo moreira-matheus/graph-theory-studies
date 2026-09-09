@@ -61,13 +61,13 @@ $$
     - $\displaystyle\sum_{v \in V} \delta(v)$ is even (Theorem 2.1);
     - $\displaystyle\sum_{v \in V} \delta(v) = \displaystyle\sum_{v \in V_\text{odd}} + \displaystyle\sum_{v \in V_\text{even}}$;
     - $\displaystyle\sum_{v \in V_\text{even}}$ is even;
-- Thus, \displaystyle\sum_{v \in V_\text{odd}}$ must add up to an even number, which means that the number of nodes with odd degree is even.
+- Thus, $\displaystyle\sum_{v \in V_\text{odd}}$ must add up to an even number, which means that the number of nodes with odd degree is even.
 
 **Degree sequence**: list of degrees of all vertices in a graph.
 - If every vertex in a graph has the same degree, the graph is called *regular*.
 - A $k$-regular graph is one in which all vertices have degree $k$. Cubic graphs are a special case in which $k=3$.
 
-<u>**Theorem 2.2**</u> ([Havel-Hakimi](https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm)): Consider a list $\bold s = [d_1, d_2, ..., d_n]$ of $n$ numbers in descending order. This list is graphic if and only if $\bold s^* = [d^*_1, d^*_2, ..., d^*_{n-1}]$ of $n-1$ numbers is graphic as well, where:
+<u>**Theorem 2.2**</u> ([Havel-Hakimi](https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm)): Consider a list $\textbf{s} = [d_1, d_2, ..., d_n]$ of $n$ numbers in descending order. This list is graphic if and only if $\textbf{s}^* = [d^*_1, d^*_2, ..., d^*_{n-1}]$ of $n-1$ numbers is graphic as well, where:
 
 $$
 d^*_{i} = \begin{cases}
