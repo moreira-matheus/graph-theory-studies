@@ -59,9 +59,9 @@ $$
 - Let us split all vertices into two sets ($V_\text{odd}$ and $V_\text{even}$), based on whether the vertices have odd or even degree.
 - We know that
     - $\displaystyle\sum_{v \in V} \delta(v)$ is even (Theorem 2.1);
-    - $\displaystyle\sum_{v \in V} \delta(v) = \displaystyle\sum_{v \in V_\text{odd}} + \displaystyle\sum_{v \in V_\text{even}}$;
-    - $\displaystyle\sum_{v \in V_\text{even}}$ is even;
-- Thus, $\displaystyle\sum_{v \in V_\text{odd}}$ must add up to an even number, which means that the number of nodes with odd degree is even.
+    - $\displaystyle\sum_{v \in V} \delta(v) = \displaystyle\sum_{v \in V_\text{odd}} \delta(v) + \displaystyle\sum_{v \in V_\text{even}} \delta(v)$;
+    - $\displaystyle\sum_{v \in V_\text{even}} \delta(v)$ is even;
+- Thus, $\displaystyle\sum_{v \in V_\text{odd}} \delta(v)$ must add up to an even number, which means that the number of nodes with odd degree is even.
 
 **Degree sequence**: list of degrees of all vertices in a graph.
 - If every vertex in a graph has the same degree, the graph is called *regular*.
