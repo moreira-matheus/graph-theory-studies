@@ -67,10 +67,10 @@ $$
 - If every vertex in a graph has the same degree, the graph is called *regular*.
 - A $k$-regular graph is one in which all vertices have degree $k$. Cubic graphs are a special case in which $k=3$.
 
-<u>**Theorem 2.2**</u> ([Havel-Hakimi](https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm)): Consider a list $\mathbf{s} = [d_1, d_2, ..., d_n]$ of $n$ numbers in descending order. This list is graphic if and only if $\mathbf{s}^{*} = [d^*_1, d^*_2, ..., d^*_{n-1}]$ of $n-1$ numbers is graphic as well, where:
+<u>**Theorem 2.2**</u> ([Havel-Hakimi](https://en.wikipedia.org/wiki/Havel%E2%80%93Hakimi_algorithm)): Consider a list $\mathbf{s} = [d_1, d_2, ..., d_n]$ of $n$ numbers in descending order. This list is graphic if and only if $\mathbf{s}^{\ast} = [d^\ast_1, d^\ast_2, ..., d^\ast_{n-1}]$ of $n-1$ numbers is graphic as well, where:
 
 $$
-d^*_{i} = \begin{cases}
+d^\ast_{i} = \begin{cases}
     d_{i+1} - 1, & \text{for } i=1,2, ..., d_1 \\
     d_{i+1}, & \text{otherwise}
 \end{cases}
