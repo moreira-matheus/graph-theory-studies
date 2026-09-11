@@ -88,7 +88,7 @@ Likewise, if $E^\ast \subseteq E(G)$, the subgraph induced by $E^\ast$ has edge 
 
 $$
 V^\ast \stackrel{\text{def}}{=} \{ u,v \in V(G)\ |\ \exists\ e \in E^\ast : e = \langle u,v \rangle \}
-$$.
+$$
 
 The subgraph induced by $V^\ast$ or $E^\ast$ is written as $G[V^\ast]$ or $G[E^\ast]$, respectively.
 
