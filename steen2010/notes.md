@@ -81,7 +81,7 @@ $$
 <u>**Definition 2.5**</u>: Consider a graph $G$ and a subset $V^\ast \subseteq V(G)$. The *subgraph induced by* $V^\ast$ has vertex set $V^\ast$ and edge set $E^\ast$ defined by:
 
 $$
-E^\ast \stackrel{\text{def}}{=} \{ e \in E(G)\ |\ e = \langle u, v \rangle \text{ with } u,v \in V^\ast \}
+E^\ast \stackrel{\text{def}}{=} \{ e \in E(G) \mid e = \langle u, v \rangle \text{ with } u,v \in V^\ast \}
 $$.
 
 Likewise, if $E^\ast \subseteq E(G)$, the subgraph induced by $E^\ast$ has edge set $E^\ast$ and vertex set $V^\ast$ defined by: 
