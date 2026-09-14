@@ -70,10 +70,10 @@ $$
 <u>**Corollary 2.1**</u>: For any graph, the number of vertices with odd degree is even.
 - Let us split all vertices into two sets ($V_\text{odd}$ and $V_\text{even}$), based on whether the vertices have odd or even degree.
 - We know that
-    - $\displaystyle\sum_{v \in V} \delta(v)$ is even (Theorem 2.1);
-    - $\displaystyle\sum_{v \in V} \delta(v) = \displaystyle\sum_{v \in V_\text{odd}} \delta(v) + \displaystyle\sum_{v \in V_\text{even}} \delta(v)$;
-    - $\displaystyle\sum_{v \in V_\text{even}} \delta(v)$ is even;
-- Thus, $\displaystyle\sum_{v \in V_\text{odd}} \delta(v)$ must add up to an even number, which means that the number of nodes with odd degree is even.
+    - $\sum_{v \in V} \delta(v)$ is even (Theorem 2.1);
+    - $\sum_{v \in V} \delta(v) = \sum_{v \in V_\text{odd}} \delta(v) + \sum_{v \in V_\text{even}} \delta(v)$;
+    - $\sum_{v \in V_\text{even}} \delta(v)$ is even;
+- Thus, $\sum_{v \in V_\text{odd}} \delta(v)$ must add up to an even number, which means that the number of nodes with odd degree is even.
 
 **Degree sequence**: list of degrees of all vertices in a graph.
 - If every vertex in a graph has the same degree, the graph is called *regular*.
@@ -125,7 +125,7 @@ The subgraph induced by $V^\ast$ or $E^\ast$ is written as $G[V^\ast]$ or $G[E^\
 - Properties:
     - An adjacency matrix is *symmetric*, that is, for all $i,j$, $\mathbf{A}[i,j] = \mathbf{A}[j,i]$. (This is a consequence of representing edges as unordered pairs of vertices: $e = \langle v_i, v_j \rangle = \langle v_j, v_i \rangle$.)
     - A graph $G$ is simple if and only if for all $i,j$ $\mathbf{A}[i,j] \leq 1, i\neq j$ and $\mathbf{A}[i,i] = 0$ (there is at most one edge joining $v_i$ and $v_j$ and no loops).
-    - $\delta(v_i) = \displaystyle\sum^{n}_{j=1} = \mathbf{A}[i,j]$, that is, the sum of row $i$ is equal to the degree of vertex $v_i$.
+    - $\delta(v_i) = \sum^{n}_{j=1} = \mathbf{A}[i,j]$, that is, the sum of row $i$ is equal to the degree of vertex $v_i$.
 
 <br><img src="./img/incidence-matrix.png"><br>
 
@@ -133,7 +133,7 @@ The subgraph induced by $V^\ast$ or $E^\ast$ is written as $G[V^\ast]$ or $G[E^\
 - The incidence matrix of a graph $G$ has $n$ rows and $m$ columns (non-square), so that $\mathbf{M}[i,j]$ contains the number of times ($0$, $1$ or $2$) that edge $e_j$ is incident with vertex $v_i$.
 - Properties:
     - $G$ has no loops if and only if for all $i,j$ $\mathbf{M}[i,j] \leq 1$.
-    - $\forall i: \delta(v_i) = \displaystyle\sum^{m}_{j=1} = \mathbf{M}[i,j]$, that is, the sum of row $i$ is equal to the degree of vertex $v_i$.
-    - Since every edge connects two (not necessarily distinct) endpoints, then $\forall j: \displaystyle\sum^{n}_{i=1} \mathbf{M}[i,j] = 2$.
+    - $\forall i: \delta(v_i) = \sum^{m}_{j=1} = \mathbf{M}[i,j]$, that is, the sum of row $i$ is equal to the degree of vertex $v_i$.
+    - Since every edge connects two (not necessarily distinct) endpoints, then $\forall j: \sum^{n}_{i=1} \mathbf{M}[i,j] = 2$.
 
 > PAGE 33 (edge list)
