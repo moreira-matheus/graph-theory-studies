@@ -9,6 +9,7 @@
 2. [Foundations](#chapter-2-foundations)
     - 2.1 [Formalities](#21-formalities)
     - 2.2 [Graph representations](#22-graph-representations)
+    - 2.3 [Connectivity](#23-connectivity)
 
 ---
 
@@ -136,4 +137,23 @@ The subgraph induced by $V^\ast$ or $E^\ast$ is written as $G[V^\ast]$ or $G[E^\
     - $\forall i: \delta(v_i) = \sum^{m}_{j=1} = \mathbf{M}[i,j]$, that is, the sum of row $i$ is equal to the degree of vertex $v_i$.
     - Since every edge connects two (not necessarily distinct) endpoints, then $\forall j: \sum^{n}_{i=1} \mathbf{M}[i,j] = 2$.
 
-> PAGE 33 (edge list)
+**Edge list**
+- More efficient representation in terms of storage.
+- It is a list of edges of graph $G$, specifying for each edge which vertices it is incident with.
+- Example: $\big( \langle v_1, v_1 \rangle, \langle v_1, v_2 \rangle, \langle v_1, v_3 \rangle, \langle v_2, v_3 \rangle, \langle v_2, v_3 \rangle, \langle v_3, v_4 \rangle, \langle v_4, v_4 \rangle \big)$
+
+<u>**Definition 2.7**</u>: Consider two graphs $G = (V, E)$ and $G^{\ast} = (V^\ast, E^\ast)$. $G$ and $G^\ast$ are *isomorphic* if there exists a one-to-one mapping $\phi : V \rightarrow V^\ast$ such that for every edge $e \in E$ with $e = \langle u,v \rangle$, there is a unique edge $e^\ast \in E^\ast$ with $e^\ast = \langle \phi(u), \phi(v) \rangle$.
+> "Stated differently, two graphs $G$ and $G^\ast$ are isomorphic if we can <u>uniquely</u> map the vertices and edges of $G$ to those of $G^\ast$ such that if two vertices were joined in $G$ by a number of edges, their counterparts in $G^\ast$ will be joined by the same number of edges." (p. 33)
+
+<u>**Theorem 2.3**</u>: If two graphs $G$ and $G^\ast$ are isomorphic, then their respective ordered degree sequences should be the same.
+- This is a <u>necessary</u> condition for isomorphism, but not a <u>sufficient</u> one.
+- There are no known easy <u>sufficient</u> conditions to tell whether two graphs are isomorphic or not: once all necessary conditions are met, we have to resort to trial and error.
+    - In the worst case, there are potentially $n!$ mappings to check!
+
+### 2.3 Connectivity
+
+<u>**Definition 2.8**</u>: Consider a graph $G$. A $\mathbf{(v_0, v_k)}$-**walk** in $G$ is an alternating sequence $[v_0, e_1, v_1, e_2, ..., v_{k-1}, e_k, v_k]$ of vertices and edges from $G$ with $e_i = \langle v_{i-1}, v_i\rangle$. In a **closed walk**, $v_0 = v_k$. A **trail** is a walk in which all edges are distinct; a **path** is a trail in which also all vertices are distinct. A **cycle** is a closed trail in which all vertices  except $v_0$ and $v_k$ are distinct.
+
+<u>**Definition 2.9**</u>: Two distinct vertices $u$ and $v$ in graph $G$ are *connected* if there exists a $(u,v)$-path in $G$. $G$ is *connected* if all pairs of distinct vertices are connected.
+
+> PAGE 38 (component)
