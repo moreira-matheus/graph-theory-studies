@@ -172,4 +172,18 @@ The subgraph induced by $V^\ast$ or $E^\ast$ is written as $G[V^\ast]$ or $G[E^\
 - $\mathbf{k}$-**edge-connected**: graph $G$ for which $\lambda(G)\geq k$.
 - **Optimally connected**: graph $G$ for which $\kappa(G) = \lambda (G) = \min\{\delta(v) \mid v \in V(G)\}$.
 
-> PAGE 40 (VERTEX INDEPENDENT)
+<u>**Definition 2.12**</u>: Consider a graph $G$ and a collection $\mathbf{P}$ of $(u,v)$-paths in $G$, with $u,v \in V(G)$. $\mathbf{P}$ is *vertex independent* if for all $(u,v)$-paths $P_1, P_2 \in \mathbf{P}$ we have that $V(P_1) \cap V(P_2) = \{u,v\}$. The collection is *edge independent* if for all its $(u,v)$-paths $P_1$ and $P_2$, we have that $E(P_1) \cap E(P_2) = \varnothing$. 
+- In other words, two $(u,v)$-paths $P_1$ and $P_2$ are *vertex independent* if they do not share any other vertices apart from $u$ and $v$, and they are *edge independent* if they share no edge.
+
+<u>**Theorem 2.5**</u> ([Menger](https://en.wikipedia.org/wiki/Menger%27s_theorem)): Let $G$ be a connected graph and $u$ and $v$ two nonadjacent vertices in $G$. The minimum number of vertices in a vertex cut that disconnects $u$ and $v$ is equal to the maximum number of pairwise vertex-independent path between $u$ to $v$. Analogously, the minimum number of edges in an edge cut that disconnects $u$ and $v$, is equal to the maximum number of pairwise edge-independent paths between $u$ and $v$.
+
+<u>**Corollary 2.2**</u>: A graph $G$ is $k$-connected if and only if any two distinct vertices are connected by at least $k$ pairwise vertex-independent paths. $G$ is $k$-edge-connected if and only if  any two distinct vertices are connected by at least $k$ pairwise edge-independent paths.
+
+<u>**Corollary 2.3**</u>: Each edge of a $2$-edge-connected graph lies on a cycle.
+
+For any simple graph $G$ a higher value of $\kappa(G)$ (size of a minimal vertex cut) implies more edges are needed.
+- In every $k$-connected graph each vertex will have at least $k$ incident edges.
+- Given that $\sum \delta (v) = 2 \cdot m$ (the sum of vertex degrees is twice the number of edges), for a graph with $n$ vertices, we would need $\frac{1}{2}\sum\delta (v)$ and thus at least $\frac{1}{2}\sum k = \frac{1}{2} n \cdot k$ edges.
+- What is the minimal number of edges for a graph to be $k$-connected?
+
+> PAGE 41 (HARARY GRAPH)
