@@ -156,4 +156,20 @@ The subgraph induced by $V^\ast$ or $E^\ast$ is written as $G[V^\ast]$ or $G[E^\
 
 <u>**Definition 2.9**</u>: Two distinct vertices $u$ and $v$ in graph $G$ are *connected* if there exists a $(u,v)$-path in $G$. $G$ is *connected* if all pairs of distinct vertices are connected.
 
-> PAGE 38 (component)
+<u>**Definition 2.10**</u>: A subgraph $H$ of $G$ is called a *component* of $G$ if $H$ is connected and not contained in a connected subgraph of $G$ with more vertices or edges. The number of components of $G$ is denoted by $\omega (G)$.
+- A component is the *maximal, connected* subgraph.
+
+<u>**Definition 2.11**</u>: For a graph $G$ let $V^\ast \subset V(G)$ and $E^\ast \subset E(G)$. $V^\ast$ is called a *vertex cut* if $\omega(G - V^\ast) > \omega(G)$. If $V^\ast$ consists of a single vertex $v$, then $v$ is called a *cut vertex*. Likewise, if $\omega(G - E^\ast) > \omega(G)$ then $E^\ast$ is called an *edge cut*. If $E^\ast$ consists of only a single edge $e$, then $e$ is known as a *cut edge*.
+
+**Minimal vertex cut of a connected graph**
+- How many vertices do we need to remove from a connected graph before it becomes disconnected.
+- Let $\kappa(G)$ denote the minimal vertex cut for $G$ and $\lambda(G)$, the minimal edge cut for $G$.
+- $\kappa(G)$ is less than or equal to $\lambda(G)$, $\lambda(G)$ is less or equal to the minimal vertex degree.
+
+<u>**Theorem 2.4**</u>: $\kappa(G) \leq \lambda (G) \leq \min\{\delta(v) \mid v \in V(G)\}$
+
+- $\mathbf{k}$-**connected**: graph $G$ for which $\kappa(G) \geq k$.
+- $\mathbf{k}$-**edge-connected**: graph $G$ for which $\lambda(G)\geq k$.
+- **Optimally connected**: graph $G$ for which $\kappa(G) = \lambda (G) = \min\{\delta(v) \mid v \in V(G)\}$.
+
+> PAGE 40 (VERTEX INDEPENDENT)
