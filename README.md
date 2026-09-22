@@ -22,4 +22,10 @@
 
 **Videos**:
 - [Reducible playlist](https://www.youtube.com/playlist?list=PLpXOY-RxVRTPPVLBP6-sz6CMWxhtrI-v_)
+  - [x] Introduction to Graph Theory: A Computer Science Perspective
+  - [x] Depth First Search (DFS) Explained: Algorithm, Examples, and Code
+  - [x] Breadth First Search (BFS): Visualized and Explained
+  - [x] The Traveling Salesman Problem: When Good Enough Beats Perfect
 - [Reinhard Diestel lectures](https://www.youtube.com/playlist?list=PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm)
+  - [x] Lecture 01: Introduction
+  - [ ] Lecture 02: Invariants I
