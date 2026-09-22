@@ -21,11 +21,13 @@
 - MATOS, Saulo Antônio de Lima. [Invariants and Neighborhood Structures for 1-factorizations of complete graphs](https://repositorio.ufba.br/handle/ri/39862). 2023. 79 f. Tese (Doutorado em Ciência da Computação) Instituto de Computação, Universidade Federal da Bahia, Salvador (Bahia), 2023.
 
 **Videos**:
-- [Reducible playlist](https://www.youtube.com/playlist?list=PLpXOY-RxVRTPPVLBP6-sz6CMWxhtrI-v_)
+- [Reducible playlist](https://www.youtube.com/playlist?list=PLpXOY-RxVRTPPVLBP6-sz6CMWxhtrI-v_):
   - [x] Introduction to Graph Theory: A Computer Science Perspective
   - [x] Depth First Search (DFS) Explained: Algorithm, Examples, and Code
   - [x] Breadth First Search (BFS): Visualized and Explained
   - [x] The Traveling Salesman Problem: When Good Enough Beats Perfect
+- [Graph Theory using Python NetworkX](https://youtube.com/playlist?list=PLMtP8YtzV6HZ4-vRKp2OiQUYUf603zMBj&si=_YwjnT1zgrBEdYMy):
+  - [ ] Basic Graphs using Python
 - [Reinhard Diestel lectures](https://www.youtube.com/playlist?list=PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm)
   - [x] Lecture 01: Introduction
   - [ ] Lecture 02: Invariants I
