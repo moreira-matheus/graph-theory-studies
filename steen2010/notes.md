@@ -256,7 +256,13 @@ $$
     - $u_y \leftarrow u_y + 0.1 \cdot F_y(u)$
 4. Goto Step 2. Stop after $M$ iterations.
 
-The attracting force *in the $x$ direction* $F_{att, x}(u,v)$ is given by $F_{att, x}(u,v) \stackrel{\text{def}}{=} F_{att}(u,v) \cdot \displaystyle\frac{|v_x - u_x|}{d(u,v)}$. The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ are analogous.
+The attracting force *in the* $x$ *direction* $F_{att, x}(u,v)$ is given by 
+
+$$
+F_{att, x}(u,v) \stackrel{\text{def}}{=} F_{att}(u,v) \cdot \displaystyle\frac{|v_x - u_x|}{d(u,v)}
+$$
+
+The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ are analogous.
 
 #### Planar graphs
 
