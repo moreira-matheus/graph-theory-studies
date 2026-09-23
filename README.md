@@ -26,6 +26,7 @@
   - [x] Depth First Search (DFS) Explained: Algorithm, Examples, and Code
   - [x] Breadth First Search (BFS): Visualized and Explained
   - [x] The Traveling Salesman Problem: When Good Enough Beats Perfect
+- [Algorithms Course - Graph Theory Tutorial from a Google Engineer](https://www.youtube.com/watch?v=09_LlHjoEiY)
 - [NetworkX Crash Course](https://youtu.be/VetBkjcm9Go?si=_JAHTrV-RgNlgur2)
 - [Graph Theory using Python NetworkX](https://youtube.com/playlist?list=PLMtP8YtzV6HZ4-vRKp2OiQUYUf603zMBj&si=_YwjnT1zgrBEdYMy):
   - [ ] Basic Graphs using Python
