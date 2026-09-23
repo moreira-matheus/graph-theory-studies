@@ -233,7 +233,13 @@ F_{att}(u,v) \stackrel{\text{def}}{=}
 \end{cases} 
 $$
 
-where $d_{u,v} \stackrel{\text{def}}{=} \sqrt{(u_x - v_x)^2 + (u_y - v_y)^2}$ is the length of the spring.
+where
+
+$$
+d_{u,v} \stackrel{\text{def}}{=} \sqrt{(u_x - v_x)^2 + (u_y - v_y)^2}
+$$
+
+is the length of the spring.
 
 - Each pair of nonadjacent vertices are subject to a repelling force $F_{rep}(u,v)$, such that:
 
@@ -248,7 +254,7 @@ $$
 <u>**Algorithm 2.1**</u> (Spring embedding):
 
 1. Place the vertices at random locations;
-2. For each vertex $u$, calculate the resulting forces in the $x$ and $y$ directions, respective ly:
+2. For each vertex $u$, calculate the resulting forces in the $x$ and $y$ directions, respectively:
     - $F_x(u) \stackrel{\text{def}}{=} \sum_{v \neq u} F_{att, x}(u,v) - F_{rep,x}(u,v)$
     - $F_y(u) \stackrel{\text{def}}{=} \sum_{v \neq u} F_{att, y}(u,v) - F_{rep,y}(u,v)$
 3. Reposition vertex $u$ according to: 
