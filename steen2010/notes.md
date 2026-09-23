@@ -10,6 +10,7 @@
     - 2.1 [Formalities](#21-formalities)
     - 2.2 [Graph representations](#22-graph-representations)
     - 2.3 [Connectivity](#23-connectivity)
+    - 2.4 [Drawing graphs](#24-drawing-graphs)
 
 ---
 
@@ -186,4 +187,77 @@ For any simple graph $G$ a higher value of $\kappa(G)$ (size of a minimal vertex
 - Given that $\sum \delta (v) = 2 \cdot m$ (the sum of vertex degrees is twice the number of edges), for a graph with $n$ vertices, we would need $\frac{1}{2}\sum\delta (v)$ and thus at least $\frac{1}{2}\sum k = \frac{1}{2} n \cdot k$ edges.
 - What is the minimal number of edges for a graph to be $k$-connected?
 
-> PAGE 41 (HARARY GRAPH)
+<u>**Definition 2.13**</u>: A *Harary graph* $\mathbf{H}_{k,n}$ is a $k$-connected simple graph with a minimal number of edges.
+- $\mathbf{H}_{k,n}$ has exactly $[k \cdot \frac{n}{2}]$ edges.
+
+<u>**Theorem 2.6**</u>: The Harary graph $\mathbf{H}_{k,n}$ is $k$-connected.
+
+**A Harary graph has a minimal number of edges**
+- For any $k$-connected graph, each vertex has degree $\delta(v) \geq k$.
+- Let $m_k(n)$ be the minimal number of edges for any simple $k$-connected graph $G$.
+- Since $|E(G)| = \frac{1}{2}\sum_{v \in V(G)} \delta(v) \geq \frac{1}{2}\sum_{v \in V(G)} \delta_{min} \geq \frac{n \cdot k}{2}$, we know that $m_k(n) \geq \frac{n \cdot k}{2}$.
+- It is not difficult to verify that $|E(\mathbf{H}_{k,n})| = \frac{nk}{2}$ (a Harary graph has minimal number of edges).
+
+<img src="./img/harary-graph.png">
+
+### 2.4 Drawing graphs
+
+#### Graph embeddings
+"[A] representation of a graph on a surface where vertices are associated with points on that surface".
+
+**Circular embedding**: vertices are placed at evenly spaced points on a circle.
+- Advantage: no three vertices are ever collinear; each edge is visible and can be drawn as a straight line.
+
+<img src="./img/circular-embedding.png">
+
+<u>**Definition 2.14**</u>: A graph $G$ is *bipartite* if $V(G)$ can be partitioned into two disjoint subsets $V_1$ and $V_2$ such that each edge $e \in E(G)$ has one endpoints in $V_1$ and the other in $V_2$, that is $E(G) \subseteq \{e = \langle u_1, u_2\rangle \mid u_1 \in V_1, u_2 \in V_2\}$.
+- Sometimes, bipartite graphs are conveniently drawn as *ranked embeddings*.
+
+**Ranked embeddings**: vertices are ranked according to their distance to a $v$.
+
+<img src="./img/ranked-embedding.png">
+
+**Spring embeddings**: vertices are modeled as springs connected by springs.
+- This is essentially a computational approach.
+- Main reference: [Eades (1984)](https://www.cs.ubc.ca/~will/536E/papers/Eades1984.pdf).
+
+Logic:
+- Each vertex $u$ is initially positioned at $(u_x, u_y)$.
+- Each spring $e = \langle u,v \rangle$ exerts an attracting force $F_{att}(u,v)$ on vertices $u$ and $v$, such that:
+
+$$
+F_{att}(u,v) \stackrel{\text{def}}{=}
+\begin{cases}
+2\log\big(d(u,v)\big), & \text{if adjacent} \\
+0, & \text{otherwise}
+\end{cases} 
+$$
+
+where $d_{u,v} \stackrel{\text{def}}{=} \sqrt{(u_x - v_x)^2 + (u_y - v_y)^2}$ is the length of the spring.
+
+- Each pair of nonadjacent vertices are subject to a repelling force $F_{rep}(u,v)$, such that:
+
+$$
+F_{rep}(u,v) \stackrel{\text{def}}{=}
+\begin{cases}
+0, & \text{if adjacent} \\
+1/\sqrt{d(u,v)}, & \text{otherwise}
+\end{cases}
+$$
+
+<u>**Algorithm 2.1**</u> (Spring embedding):
+
+1. Place the vertices at random locations;
+2. For each vertex $u$, calculate the resulting forces in the $x$ and $y$ directions, respective ly:
+    - $F_x(u) \stackrel{\text{def}}{=} \sum_{v \neq u} F_{att, x}(u,v) - F_{rep,x}(u,v)$
+    - $F_y(u) \stackrel{\text{def}}{=} \sum_{v \neq u} F_{att, y}(u,v) - F_{rep,y}(u,v)$
+3. Reposition vertex $u$ according to: 
+    - $u_x \leftarrow u_x + 0.1 \cdot F_x(u)$
+    - $u_y \leftarrow u_y + 0.1 \cdot F_y(u)$
+4. Goto Step 2. Stop after $M$ iterations.
+
+The attracting force *in the $x$ direction* $F_{att, x}(u,v)$ is given by $F_{att, x}(u,v) \stackrel{\text{def}}{=} F_{att}(u,v) \cdot \displaystyle\frac{|v_x - u_x|}{d(u,v)}$. The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ are analogous.
+
+#### Planar graphs
+
+> PAGE 50 (PLANAR GRAPHS)
