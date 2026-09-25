@@ -11,6 +11,7 @@
     - 2.2 [Graph representations](#22-graph-representations)
     - 2.3 [Connectivity](#23-connectivity)
     - 2.4 [Drawing graphs](#24-drawing-graphs)
+3. [Extensions](#chapter-3-extensions)
 
 ---
 
@@ -272,4 +273,31 @@ The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ ar
 
 #### Planar graphs
 
-> PAGE 50 (PLANAR GRAPHS)
+<u>**Definition 2.15**</u>: A *plane graph* is a specific embedding of a graph $G$ such that no edges intersect. If such an embedding exists, $G$ is said to be planar.
+- *Regions* (or faces): portions enclosed by the edges of the graph.
+
+<img src="./img/plane-graph-regions.png">
+
+<u>**Theorem 2.7**</u> ([Euler's formula](https://en.wikipedia.org/wiki/Planar_graph#Euler's_formula)): For a plane graph $G$ with $n$ vertices, $m$ edges, and $r$ regions, we have that $n - m + r = 2$.
+
+<u>**Definition 2.16**</u>: A simple, connected graph with no cycles is called a *tree*. A simple graph having only trees as its components is called a *forest*.
+
+<u>**[Lemma](https://en.wikipedia.org/wiki/Lemma_(mathematics)) 2.1**</u>: Any tree $T$ with $n$ vertices has $|E(T)| = n - 1$ edges.
+
+<u>**Theorem 2.8**</u> ([Principle of induction](https://en.wikipedia.org/wiki/Mathematical_induction)): Let $S(n)$ be a mathematical statement formulated in terms of a natural number $n$. $S(n)$ is true if the following two statements are true:
+1. $S(1)$ is true;
+2. for any $k \in \mathbb{N}$, if $S(k)$ is true, then $S(k+1)$ is true.
+
+<u>**Theorem 2.9**</u>: For any connected simple planar graph $G$ with $n \geq 3$ vertices and $m$ edges, we have that $m \leq 3n-6$.
+- This theorem is a *necessary* condition for a simple graph to be planar.
+- This theorem can be used to prove that $K_5$ (complete graph with 5 vertices) cannot be planar.
+
+<u>**Corollary 2.4**</u>: The complete graph on 5 vertices, $K_5$ is nonplanar.
+
+<u>**Theorem 2.10**</u>: The complete bipartite graph $K_{3,3}$ is nonplanar.
+
+<u>**Corollary 2.5**</u>: Any connected, simple graph having a subgraph isomorphic to either $K_5$ or $K_{3,3}$ cannot be planar.
+
+## Chapter 3: Extensions
+
+> PAGE 57 (DIRECTED GRAPHS)
