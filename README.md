@@ -2,13 +2,15 @@
 
 ### References
 
-**Books**:
+**Books**[^1]:
 
 - VAN STEEN, Maarten. Graph theory and complex networks: an introduction. 2010.
 - GRINBERG, Darij. An introduction to graph theory. Disponível em: <https://arxiv.org/abs/2308.04512>. Acesso em: 1 set. 2026.
 - TRUDEAU, Richard J. Introduction to graph theory. Courier Corporation, 2013.
 - GIBBONS, Alan. Algorithmic graph theory. Cambridge: Cambridge university press, 1985.
 - PLATT, Edward L. Network science with Python and NetworkX quick start guide: explore and visualize network data effectively. Packt Publishing Ltd, 2019.
+
+[^1]: These references can be found at [this folder](https://drive.google.com/drive/folders/1gT6GI1LMcUZ4uc4tDEbkv0QIH1WGw4mT).
 
 **Articles**:
 - Machado, M. O., Fernandes, I. F. C., & Maia, S. M. D. M. (2026). [Path-Relinking Heuristics for the Offshore Wind Farm Cable Routing Problem](https://journals-sol.sbc.org.br/index.php/jbcs/article/view/7304). Journal of the Brazilian Computer Society, 32(1), 2111–2130. https://doi.org/10.5753/jbcs.2026.7304
