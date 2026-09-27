@@ -35,3 +35,6 @@
 - [Reinhard Diestel lectures](https://www.youtube.com/playlist?list=PL_qO0UBYKVJ1myNZdh3j27fniqRtHYifm)
   - [x] Lecture 01: Introduction
   - [ ] Lecture 02: Invariants I
+
+***
+
