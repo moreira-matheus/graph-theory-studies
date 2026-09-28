@@ -12,6 +12,7 @@
     - 2.3 [Connectivity](#23-connectivity)
     - 2.4 [Drawing graphs](#24-drawing-graphs)
 3. [Extensions](#chapter-3-extensions)
+    - 3.1 [Directed graphs](#31-directed-graphs)
 
 ---
 
@@ -299,6 +300,8 @@ The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ ar
 <u>**Corollary 2.5**</u>: Any connected, simple graph having a subgraph isomorphic to either $K_5$ or $K_{3,3}$ cannot be planar.
 
 ## Chapter 3: Extensions
+
+### 3.1 Directed graphs
 
 <u>**Definition 3.1**</u>: A *directed graph* or *digraph* $D$ consists of a collection of *vertices* $V$, a collection of *arcs* $A$, for which we write $D = (V, A)$, Each arc $a = \langle  \overrightarrow{u,v} \rangle$ is said to join vertex $u \in V$ (called *tail*) to another (not necessarily distinct) vertex $v$ (called *head*).
 - The *underlying graph* $G(D)$ of a digraph $D$ is obtained by replacing each arc $a = \langle  \overrightarrow{u,v} \rangle$ with its undirected counterpart.
