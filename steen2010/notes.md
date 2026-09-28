@@ -307,8 +307,10 @@ The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ ar
 <u>**Definition 3.2**</u>: Consider a digraph $D$ and vertex $v \in V(D)$. The *in-neighbor set* $N_{in}(v)$ consists of the adjacent vertices having an arc with $v$ as its head. Likewise, the *out-neighbor set* $N_{out}(v)$ consists of the adjacent vertices having an arc with $v$ as its tail. Formally,
 
 $$
+\begin{array}{ll}
 N_{in}(v) \stackrel{\text{def}}{=} \{ w \in D \mid v \neq w , \exists a = \langle  \overrightarrow{w,v} \rangle : a \in A(D) \} \\
 N_{out}(v) \stackrel{\text{def}}{=} \{ w \in D \mid v \neq w , \exists a = \langle  \overrightarrow{v,w} \rangle : a \in A(D) \}
+\end{array}
 $$
 
 - The set of neighbors $N(v)$ is simply the union: $ N(v) \stackrel{\text{def}}{=} N_{in}(v) \cup N_{out}(v)$.
