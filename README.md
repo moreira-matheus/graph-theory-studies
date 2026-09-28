@@ -4,11 +4,11 @@
 
 **Books**[^1]:
 
-- VAN STEEN, Maarten. Graph theory and complex networks: an introduction. 2010.
-- DIESTEL, R. Graph Theory: 6th edition. Disponível em: <https://books.google.com.br/books?id=52UTEQAAQBAJ>. Acesso em: 28 set. 2026.
-- WILLIAMSON, D. P. Network Flow Algorithms. [S.l.]: Cambridge University Press, 2019.
-- AHUJA, R. K.; MAGNANTI, T. L.; ORLIN, J. B. Network Flows: Theory, Algorithms, and Applications. [S.l.]: Prentice Hall, 1993.
-- LAKATOS, I.; WORRALL, J.; ZAHAR, E. Proofs and Refutations: The Logic of Mathematical Discovery. In: Cambridge Philosophy Classics. [S.l.]: Cambridge University Press, 2015.[^2]
+- `steen2010`: VAN STEEN, Maarten. Graph theory and complex networks: an introduction. 2010.
+- `diestel2024`: DIESTEL, R. Graph Theory: 6th edition. Disponível em: <https://books.google.com.br/books?id=52UTEQAAQBAJ>. Acesso em: 28 set. 2026.
+- `williamson2019`: WILLIAMSON, D. P. Network Flow Algorithms. [S.l.]: Cambridge University Press, 2019.
+- `ahuja1993`: AHUJA, R. K.; MAGNANTI, T. L.; ORLIN, J. B. Network Flows: Theory, Algorithms, and Applications. [S.l.]: Prentice Hall, 1993.
+- `lakatos2015`: LAKATOS, I.; WORRALL, J.; ZAHAR, E. Proofs and Refutations: The Logic of Mathematical Discovery. In: Cambridge Philosophy Classics. [S.l.]: Cambridge University Press, 2015.[^2]
 
 [^1]: These references can be found at [this folder](https://drive.google.com/drive/folders/1gT6GI1LMcUZ4uc4tDEbkv0QIH1WGw4mT).
 [^2]: This reference is a supplementary reading for proof writing.
