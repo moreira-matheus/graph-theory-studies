@@ -300,4 +300,22 @@ The definitions of $F_{att, y}(u,v)$, $F_{rep, x}(u,v)$ and $F_{rep, y}(u,v)$ ar
 
 ## Chapter 3: Extensions
 
-> PAGE 57 (DIRECTED GRAPHS)
+<u>**Definition 3.1**</u>: A *directed graph* or *digraph* $D$ consists of a collection of *vertices* $V$, a collection of *arcs* $A$, for which we write $D = (V, A)$, Each arc $a = \langle  \overrightarrow{u,v} \rangle$ is said to join vertex $u \in V$ (called *tail*) to another (not necessarily distinct) vertex $v$ (called *head*).
+- The *underlying graph* $G(D)$ of a digraph $D$ is obtained by replacing each arc $a = \langle  \overrightarrow{u,v} \rangle$ with its undirected counterpart.
+- An undirected graph $G$ can be transformed into a digraph $D(G)$ by associating a direction with each edge. Such a digraph is known as *orientation*.
+
+<u>**Definition 3.2**</u>: Consider a digraph $D$ and vertex $v \in V(D)$. The *in-neighbor set* $N_{in}(v)$ consists of the adjacent vertices having an arc with $v$ as its head. Likewise, the *out-neighbor set* $N_{out}(v)$ consists of the adjacent vertices having an arc with $v$ as its tail. Formally,
+
+$$
+N_{in}(v) \stackrel{\text{def}}{=} \{ w \in D \mid v \neq w , \exists a = \langle  \overrightarrow{w,v} \rangle : a \in A(D) \} \\
+N_{out}(v) \stackrel{\text{def}}{=} \{ w \in D \mid v \neq w , \exists a = \langle  \overrightarrow{v,w} \rangle : a \in A(D) \}
+$$
+
+- The set of neighbors $N(v)$ is simply the union: $ N(v) \stackrel{\text{def}}{=} N_{in}(v) \cup N_{out}(v)$.
+
+**Strict digraph**: has no loops and no two arcs with the same end points have the same orientation.
+- Analogous to the simple (undirected) graph.
+
+<u>**Definition 3.3**</u>: For a vertex $v \in V(D)$, the number of arcs with head $v$ is called the *in-degree* $\delta_{in}(v)$. Likewise, the *out-degree* $\delta_{out}(v)$ is the number of arcs having $v$ as tail.
+
+> PAGE 59 (INDEGREE & OUTDEGREE)
