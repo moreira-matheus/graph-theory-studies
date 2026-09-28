@@ -313,7 +313,11 @@ N_{out}(v) \stackrel{\text{def}}{=} \{ w \in D \mid v \neq w , \exists a = \lang
 \end{array}
 $$
 
-- The set of neighbors $N(v)$ is simply the union: $N(v) \stackrel{\text{def}}{=} N_{in}(v) \cup N_{out}(v)$.
+- The set of neighbors $N(v)$ is simply the union: 
+
+$$
+N(v) \stackrel{\text{def}}{=} N_{in}(v) \cup N_{out}(v)
+$$
 
 **Strict digraph**: has no loops and no two arcs with the same end points have the same orientation.
 - Analogous to the simple (undirected) graph.
