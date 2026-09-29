@@ -327,4 +327,42 @@ $$
 
 <u>**Definition 3.3**</u>: For a vertex $v \in V(D)$, the number of arcs with head $v$ is called the *in-degree* $\delta_{in}(v)$. Likewise, the *out-degree* $\delta_{out}(v)$ is the number of arcs having $v$ as tail.
 
-> PAGE 59 (INDEGREE & OUTDEGREE)
+<u>**Theorem 3.1**</u>: For any directed graph $D$ the sum of in-degrees as well as the sum of out-degrees is equal to the total number of arcs:
+
+$$
+\displaystyle\sum_{v \in V(D)} \delta_{in}(v) = \displaystyle\sum_{v \in V(D)} \delta_{out}(v) = |A(D)|
+$$
+
+**Adjacency matrix**: matrix $\mathbf{A}$ in which $\mathbf{A}[i,j]$ is equal to the number of arcs joining vertex $v_i$ to $v_j$.
+- $D$ is strict iff $\forall i, j : \mathbf{A}[i,j] \leq 1, \mathbf{A}[i,i] = 0$.
+- For each vertex $v_i$, $\sum_{j} \mathbf{A}[i,j] = \delta_{out}(v_i)$ and $\sum_{j} \mathbf{A}[j,i] = \delta_{in}(v_i)$.
+- For a digraph, the adjacency matrix is not necessarily symmetric.
+
+<img src="./img/digraph-adjacency-matrix.png">
+
+**Incidence matrix**: matrix $\mathbf{M}$ in which $\mathbf{M}[i,j]$ whether vertex $v_i$ is incident to arc $a_j$, so that:
+
+$$
+\mathbf{M}[i,j] = 
+\begin{cases}
+1, & \text{if }v_i\text{ is the tail of }a_j \\
+-1, & \text{if }v_i\text{ is the head of }a_j \\
+0, & \text{otherwise}
+\end{cases}
+$$
+
+- This representation will not work if the digraph has loops.
+
+<u>**Definition 3.4**</u>: For a digraph $D$, a *directed* $\mathit{(v_0, v_k)}$-*walk* in $D$ is an alternating sequence $[v_0, a_0, v_1, a_1, ... v_{k-1}, a_{k-1}, v_k]$ of vertices and arcs from $D$ with $a_{i} = \langle \overrightarrow{v_i, v_{i+1}}\rangle$. A *directed trail* is a directed walk in which all arcs are distinct; a *directed path* is a directed trail in which all vertices are also distinct. A *directed cycle* is a directed trail in which all vertices ar distinct except for $v_0$ and $v_k$.
+
+<u>**Definition 3.5**</u>: A digraph $D$ is *strongly connected* if there exists a directed path between every pair of distinct vertices from $D$. A digraph is *weakly connected* if its underlying graph (i.e., its undirected counterpart) is connected.
+
+<u>**Algorithm 3.1**</u> (Reachable vertices): Let $R_0(u)$ denote the set of reachable vertices from $u$ found after $t$ steps.
+
+1. Set $t \leftarrow 0$ and $R_0(u) \leftarrow \{u\}$
+2. Construct the set $R_{t+1}(u) \leftarrow R_t(u) \cup_{v \in R_t(u)} N_{out}(v)$
+3. If $R_{t+1}(u) = R_t(u)$, stop: $R(u) \leftarrow R_t(u)$. Otherwise, increment $t$ and repeat the previous step.
+
+- This is an example of [**breadth-first algorithm**](https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/).
+
+> PAGE 62 (BFS)
