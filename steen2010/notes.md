@@ -13,6 +13,8 @@
     - 2.4 [Drawing graphs](#24-drawing-graphs)
 3. [Extensions](#chapter-3-extensions)
     - 3.1 [Directed graphs](#31-directed-graphs)
+    - 3.2 [Weighted graphs](#32-weighted-graphs)
+    - 3.3 [Colorings](#33-colorings)
 
 ---
 
@@ -364,5 +366,50 @@ $$
 3. If $R_{t+1}(u) = R_t(u)$, stop: $R(u) \leftarrow R_t(u)$. Otherwise, increment $t$ and repeat the previous step.
 
 - This is an example of [**breadth-first algorithm**](https://www.geeksforgeeks.org/dsa/breadth-first-search-or-bfs-for-a-graph/).
+- $D$ will be strongly connected iff $\forall u \in V(D): R(u) = V(D)$
 
-> PAGE 62 (BFS)
+<br>
+
+**Question**: Can we provide an orientation for a given (connected) undirected graph such that the resulting digraph is strongly connected?
+
+<u>**Theorem 3.2**</u> ([Robbins' theorem](https://en.wikipedia.org/wiki/Robbins%27_theorem)): There exists an orientation $D(G)$ for a connected undirected graph $G$ that is strongly connected iff $\lambda (G) \geq 2$ (i.e., $G$ cannot be $1$-edge-connected).
+
+### 3.2 Weighted graphs
+
+<u>**Definition 3.6**</u>: A *weighted graph* $G$ is a graph for which each edge $e$ has an associated real-valued number $w(e)$ called its *weight*. For any subgraph $H \subseteq G$, the weight of $H$ is simply the sum of the weights of its edges: $w(H) = \sum_{e \in E(H)} w(e)$.
+- Conventions: $w(\langle u,v\rangle) = \infty$, when $u$ and $v$ are not adjacent; thus, for each edge $e \in E(G)$, $w(e) < \infty$
+
+<u>**Definition 3.7**</u>: Consider an undirected graph $G$ and two vertices $u, v \in V(G)$. Let $P$ be a $(u,v)$-path having minimal weight among all $(u,v)$-paths in $G$. The weight of $P$ is known as the *(geodesic) distance* $d(u,v)$ between $u$ and $v$. Path $P$ is called a *shortest path* $(u,v)$-path, or a *geodesic* between $u$ and $v$.
+
+**Dijkstra's algorithm**
+- Efficient algorithm for finding the shortest path from a vertex $u$ to all other vertices in a given undirected graph.
+- Another example of breadth-first algorithm.
+- Creates a tree rooted at $u$: $T(u)$.
+
+<u>**Algorithm 3.2**</u> ([Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)): Consider an undirected, simple weighted graph $G$, <u>whose weights are nonnegative</u>, and a vertex $u \in V(G)$.
+- Let $S_t(u)$ be the set of vertices to which a shortest path from $u$ has been found after step $t$.
+- Each vertex $v$ is assigned a label $\mathbf{L}(v) \stackrel{\text{def}}{=} \big(L_1(v), L_2(v)\big)$, in which $L_1(v)$ is the vertex preceeding $v$ in the shortest $(u,v)$-path found so far, and $L_2(v)$ the total weight of that path.
+- Let $R_t(u) \stackrel{\text{def}}{=} S_t(u) \cup_{v \in S_t(u)} N(v)$, with $N(v)$ denoting the neighbor set of $v$ (i.e., $R_t(u)$ consists of all vertices in $S_t(u)$ and their neighbors).
+
+**Algorithm**:
+
+1. Initialize $t \leftarrow 0$ and $S_0(u) \leftarrow \{u\}$. Furthermore, for all $v \in V(G)$:
+
+$$
+\mathbf{L}(v) =
+\begin{cases}
+(u, 0) & \text{if } v=u \\
+(-, \infty) & \text{otherwise}
+\end{cases}
+$$
+
+2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider the vertices $N'(y)$ that are neighbors of $y$ that lie in $S_t(u)$, i.e., $N'(y) \stackrel{\text{def}}{=} N(y) \cap S_t(u)$. Select $x \in N'(y)$ for which $L_2(x) + w(\langle x,y\rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow \big(x, L_2(x) + w(e)\big)$
+3. Let $z \in R_t(u) \setminus S_t(u)$ for which $L_2(z)$ is minimal. Set $S_{t+1}(u) \leftarrow S_t(u) \cup \{z\}$. If $S_{t+1} = V(G)$, stop. Otherwise, $t \leftarrow t+1$, compute $R_t(u)$ again and repeat the previous step.
+
+**Pseudocode**:
+
+<img src="./img/dijkstra-pseudocode.png">
+
+### 3.3 Colorings
+
+> PAGE 69 (COLORINGS)
