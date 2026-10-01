@@ -15,6 +15,7 @@
     - 3.1 [Directed graphs](#31-directed-graphs)
     - 3.2 [Weighted graphs](#32-weighted-graphs)
     - 3.3 [Colorings](#33-colorings)
+4. [Network traversal](#chapter-4-network-traversal)
 
 ---
 
@@ -436,5 +437,16 @@ Assigning colors such that edges incident  with the same vertex have different c
 **Chromatic number** of $G$: minimal $k$ for which $G$ is $k$-vertex-colorable.
 - Denoted by $\chi(G)$.
 
+<u>**Theorem 3.4**</u>: The minimum number of time slots needed for the class-scheduling problem is the value of $\chi(G)$.
 
-> PAGE 72 (THEOREM 3.4)
+<u>**Theorem 3.5**</u>: For any (simple, connected) graph $G$, $\chi(G) \leq \Delta(G) + 1$.
+
+<u>**Theorem 3.6**</u>: For any planar graph $G$, $\chi(G) \leq 4$.
+
+<u>**Theorem 3.7**</u>: Every planar graph $G$ has a vertex $v$ with $\delta (v) \leq 5$.
+
+<u>**Theorem 3.8**</u>: For any planar graph $G$, $\chi(G) \leq 5$.
+
+## Chapter 4: Network traversal
+
+> PAGE 81 (EULER TOURS)
