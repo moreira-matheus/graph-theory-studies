@@ -412,4 +412,29 @@ $$
 
 ### 3.3 Colorings
 
-> PAGE 69 (COLORINGS)
+#### Edge coloring
+
+Assigning colors such that edges incident  with the same vertex have different colors.
+
+<u>**Definition 3.8**</u>: Consider a connected, loopless graph $G$. $G$ is $k$-*edge-colorable* if there exists a partitioning of $E(G)$ into $k$ disjoint sets $E_1, ..., E_k$ such that no two edges from the same $E_i$ are incident with the same vertex.
+- A partitioning of a set is formally defined as a collection of sets $S_1, ..., S_k$ such that:
+    - $\forall i: S_i \subseteq S$
+    - $\cup_{i=1}^{k} S_i = S$
+    - $\forall i \neq j: S_i \cap S_j = \varnothing$
+
+**Edge chromatic number**: minimal $k$ for which $G$ is $k$-edge-colorable.
+- Denoted by $\chi'(G)$.
+- If $\Delta(G)$ is the maximal degree of a vertex in graph $G$, i is obvious that $\chi'(G) \geq \Delta(G)$.
+
+<u>**Theorem 3.3**</u> ([Vizing's theorem](https://en.wikipedia.org/wiki/Vizing%27s_theorem)): For any simple graph $G$, either $\chi'(G) = \Delta(G)$ or $\chi'(G) = \Delta(G) + 1$.
+
+#### Vertex colorings
+
+<u>**Definition 3.9**</u>: Consider a simple connected graph $G$. $G$ is $k$-*vertex-colorable* if there exists a partitioning of $V(G)$ into $k$ disjoint set $V_1, ..., V_k$ such that no two vertices from the same $V_i$ are adjacent.
+- $\forall V_i, \forall x, y \in V_i : \nexists e \in E(G): e = \langle x, y \rangle$
+
+**Chromatic number** of $G$: minimal $k$ for which $G$ is $k$-vertex-colorable.
+- Denoted by $\chi(G)$.
+
+
+> PAGE 72 (THEOREM 3.4)
