@@ -16,6 +16,7 @@
     - 3.2 [Weighted graphs](#32-weighted-graphs)
     - 3.3 [Colorings](#33-colorings)
 4. [Network traversal](#chapter-4-network-traversal)
+    - 4.1 [Euler tours](#41-euler-tours)
 
 ---
 
@@ -449,4 +450,36 @@ Assigning colors such that edges incident  with the same vertex have different c
 
 ## Chapter 4: Network traversal
 
-> PAGE 81 (EULER TOURS)
+### 4.1 Euler tours
+
+<u>**Definition 4.1**</u>: A *tour* of a graph is a $(u,v)$-walk in which $u=v$ (i.e., a closed walk) and that traverses each edge in $G$.An *Euler tour* is a tour in which all edges are traversed exactly once.
+
+<u>**Theorem 4.1**</u>: A connected graph $G$ (with $n > 1$) has an Euler tour iff it has no vertices of odd degree.
+
+<u>**Theorem 4.2**</u>: A connected graph $G$ (with $n > 1$) has an Euler trail iff it has two vertices of odd degree. Moreover, the trail originates and ends in the vertices of odd degree.
+
+<u>**Algorithm 4.1**</u> ([Fleury](https://en.wikipedia.org/wiki/Eulerian_path#Fleury's_algorithm)): Consider an Eulerian graph $G$.
+
+1. Choose an arbitrary vertex $v_0 \in V(G)$ and set $W_0 = v_0$.
+2. Assume that we have constructed a trail $W_k = [v_0, e_1, ..., e_k, v_k]$.
+    - Choose an edge incident to $v_k$, but which is not yet part of $W_k$, that is, $e_{k+1} = \langle v_k, v_{k+1}\rangle$ and $e_{k+1} \in E(G) \setminus E(W_k)$.
+    - In addition, make sure that $e_{k+1}$ is not a cut edge of the induced subgraph $G_k = G - E(W_k)$, unless there is no other option.
+3. We now have a trail $W_{k+1}$. If there is no edge $e_{k+2} = \langle v_{k+1}, v_{k+2}\rangle$ to select from $E(G) \setminus E(W_{k+1})$, stop. Otherwise, repeat the previous step.
+
+<u>**Theorem 4.3**</u>: A trail constructed by Fleury's algorithm in an Eulerian graph is an Euler tour of $G$.
+
+**[The Chinese postman problem](https://en.wikipedia.org/wiki/Chinese_postman_problem)**: Consider a weighted graph $G$ in which each edge has a nonnegative weight.
+- The problem is to find a closed walk $W = [v_0, e_1, v_1, ..., e_n, v_n]$ that covers all edges of $G$, but with minimal weight.
+- In other words, $E(W) = E(G)$ and $\sum_{i=1}^{n} = w(e_i)$ is minimal.
+- Related traversal problems:
+    - *Routing garbage trucks*: neighborhood is an undirected graph, each junction is a vertex and each street is an edge (whose weight is interpreted as the length of the street).
+    - *Routing a postman*: In this a junction is still a vertex, but a street with houses in both sides is represented by two edges.
+    - *Checking a Web site*: Web site is an undirected graph, where a page is a vertex and a link is an edge of weight $1$.
+- To solve it, we transform an non-Eulerian graph int an Eulerian one by *duplicating* edges.
+    - Duplicating an edge $e = \langle u,v\rangle$ means adding an edge $e^{\ast} = \langle u,v\rangle$ with the same weight as $e$.
+    - The trick is to duplicate as few edges as possible, so that the total weight of the resulting graph is minimal.
+    - Once we have transformed the graph into an Eulerian one, we apply Fleury's algorithm to find an Euler tour.
+        - By ensuring that the weight of the transformed graph is minimal, we also ensure that the Euler tour is minimal.
+    - Unfortunately, transforming a graph to a Eulerian one that has as less weight as possible is not trivial.
+ 
+> PAGE 90 (ALGORITHM 4.2)
