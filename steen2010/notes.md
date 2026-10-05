@@ -18,6 +18,7 @@
 4. [Network traversal](#chapter-4-network-traversal)
     - 4.1 [Euler tours](#41-euler-tours)
     - 4.2 [Hamilton cycles](#42-hamilton-cycles)
+5. [Trees](#chapter-5-trees)
 
 ---
 
@@ -512,4 +513,15 @@ The resulting graph $G^{\ast}$ is Eulerian with minimal weight, for which we the
 
 <u>**Theorem 4.7**</u> ([Bondy-Chvátal theorem](https://en.wikipedia.org/wiki/Hamiltonian_path#Bondy%E2%80%93Chv%C3%A1tal_theorem)): A simple graph $G$ with $n$ vertices is Hamiltonian iff if its closure is Hamiltonian.
 
-> PAGE 97 (FINDING HAMILTONIAN CYCLE)
+<u>**Algorithm 4.3**</u> ([Pósa's algorithm](https://en.wikipedia.org/wiki/P%C3%B3sa%27s_theorem)): Consider a graph $G$ and let $u \in V(G)$ be a randomly selected vertex. This vertex forms the first vertex of a path $P$ that is expanded as follows. Let $\text{last}(P)$ denote the last vertex of $P$. Note that initially $\text{last}(P) = u$.
+
+1. Randomly select a neighboring vertex $v \in N(\text{last}(P))$, such that (1) preferably, $v$ does not lie on $P$, and (2) if $v \in V(P)$, then $v$ has not been previously selected as neighbor of a last vertex before. If no such vertex exists, stop.
+2. If $v \notin V(P)$, set $P \leftarrow P + \langle\text{last}(P), v\rangle$.
+3. If $v \in V(P)$ then apply a [rotational transformation](https://mathworld.wolfram.com/PosaRotation.html) of $P$ using $\langle \text{last}(P), v\rangle$, leading to a path $P^{\ast}$ with a new last vertex $\text{last}(P^{\ast})$. If $\text{last}(P^{\ast})$ has not yet been the last vertex for paths of the current length, set $P \leftarrow P^{\ast}$.
+4. If in the possibly modified version of $P$ we now have that $V(P) = V(G)$, check if $\langle u, \text{last}(P)\rangle \in E(G)$. If so, we have found a Hamilton cycle. Otherwise, continue with step 1.
+
+<u>**Theorem 4.8**</u>: A directed graph $D$ is Hamiltonian iff its [transformed undirected version](https://www.youtube.com/watch?v=kl2k_wgYYic) $\hat{D}$ is Hamiltonian.
+
+## Chapter 5: Trees
+
+> PAGE 107 (BACKGROUND)
