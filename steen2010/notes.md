@@ -17,6 +17,7 @@
     - 3.3 [Colorings](#33-colorings)
 4. [Network traversal](#chapter-4-network-traversal)
     - 4.1 [Euler tours](#41-euler-tours)
+    - 4.2 [Hamilton cycles](#42-hamilton-cycles)
 
 ---
 
@@ -481,5 +482,34 @@ Assigning colors such that edges incident  with the same vertex have different c
     - Once we have transformed the graph into an Eulerian one, we apply Fleury's algorithm to find an Euler tour.
         - By ensuring that the weight of the transformed graph is minimal, we also ensure that the Euler tour is minimal.
     - Unfortunately, transforming a graph to a Eulerian one that has as less weight as possible is not trivial.
- 
-> PAGE 90 (ALGORITHM 4.2)
+
+<u>**Algorithm 4.2**</u>: Consider a weighted, connected graph $G$ with odd-degree vertices $V_{odd}= \{v_1, ..., v_{2k}\}$ where $k \geq 1$.
+
+1. For each pair of distinct odd-degree vertices $v_i$ and $v_j$, find a minimum weight $(v_i, v_j)$-path $P_{i,j}$. 
+2. Construct a weighted complete graph on $2k$ vertices in which vertex $v_i$ and $v_j$ are joined by an edge having weight $w(P_{i,j})$.
+3. Find the set $E$ of $k$ edges $e_1, ..., e_k$ such that $\sum w(e_i)$ is minimal and no two edges are incident with the same vertex.
+4. For each edge $e \in E$, with $e = \langle v_i, v_j \rangle$, duplicate the edges of $P_{i,j}$ in graph $G$.
+
+The resulting graph $G^{\ast}$ is Eulerian with minimal weight, for which we then apply Fleury's algorithm to find a minimum-weight Euler tour.
+
+### 4.2 Hamilton cycles
+
+<u>**Definition 4.2**</u>: Consider a connected graph $G$. A *Hamilton path* of $G$ is a path that contains every vertex of $G$. Likewise, a *Hamilton cycle* is a cycle containing every vertex of $G$. $G$ is called *Hamiltonian* if it has a Hamilton cycle.
+
+**Representative problems** (instances of the [Travelling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)):
+- *Transportation problems*: picking up people at $n$ locations with roads as weighted edges between them. The solution is a minimal weighted Hamiltonian subgraph containing all vertices.
+- *Drilling holes*: minimize the distance a machine needs to run to drill holes in a board. This can be modeled as a complete graph with vertices as holes and edges' weights being the geometric distance between them.
+
+<u>**Theorem 4.4**</u>: If a graph is Hamiltonian, then for every proper nonempty subset $S \subset V(G)$, we have that $\omega(G-S) \leq |S|$.
+- Necessary condition for a graph to be Hamiltonian.
+
+<u>**Theorem 4.5**</u> ([Dirac's theorem](https://en.wikipedia.org/wiki/Dirac%27s_theorem)): If $G$ is a simple graph with $n = |V(G)|$ vertices, $n \geq 3$ and each vertex $v$ has degree $\delta(v) \geq \frac{n}{2}$, then $G$ is Hamiltonian. 
+- Sufficient condition for a graph to be Hamiltonian.
+
+<u>**Theorem 4.6**</u> [Ore's theorem](https://en.wikipedia.org/wiki/Ore%27s_theorem): Let $G$ be a simple graph with $n$ vertices. If $u$ and $v$ are distinct, nonadjacent vertices $\delta(u) + \delta(v) \geq n$, then $G$ is Hamiltonian iff $G + \langle u,v \rangle$ is Hamiltonian.
+
+<u>**Definition 4.3**</u>: Consider a graph $G$ with $n$ vertices. The *closure* of $G$ is obtained by iteratively joining each nonadjacent pair of vertices $u$ and $v$ for which $\delta(u) + \delta(v) \geq n$, until no such pairs exist anymore.
+
+<u>**Theorem 4.7**</u> ([Bondy-Chvátal theorem](https://en.wikipedia.org/wiki/Hamiltonian_path#Bondy%E2%80%93Chv%C3%A1tal_theorem)): A simple graph $G$ with $n$ vertices is Hamiltonian iff if its closure is Hamiltonian.
+
+> PAGE 97 (FINDING HAMILTONIAN CYCLE)
