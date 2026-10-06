@@ -411,7 +411,7 @@ $$
 \end{cases}
 $$
 
-2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider the vertices $N'(y)$ that are neighbors of $y$ that lie in $S_t(u)$, i.e., $N'(y) \stackrel{\text{def}}{=} N(y) \cap S_t(u)$. Select $x \in N'(y)$ for which $L_2(x) + w(\langle x,y\rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow \big(x, L_2(x) + w(e)\big)$
+2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider the vertices $N^{\prime}(y)$ that are neighbors of $y$ that lie in $S_t(u)$, i.e., $N^{\prime}(y) \stackrel{\text{def}}{=} N(y) \cap S_t(u)$. Select $x \in N^{\prime}(y)$ for which $L_2(x) + w(\langle x,y\rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow \big(x, L_2(x) + w(e)\big)$
 3. Let $z \in R_t(u) \setminus S_t(u)$ for which $L_2(z)$ is minimal. Set $S_{t+1}(u) \leftarrow S_t(u) \cup \{z\}$. If $S_{t+1} = V(G)$, stop. Otherwise, $t \leftarrow t+1$, compute $R_t(u)$ again and repeat the previous step.
 
 **Pseudocode**:
@@ -603,7 +603,7 @@ $$
 \end{cases}
 $$
 
-2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider $N'_{out}(y) \stackrel{\text{def}}{=} N_{out}(y) \cap S_t(u)$. Select $x \in N'_{out}(y)$ for which $L_2(x) + w(\langle \overrightarrow{y,x} \rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow (x, L_2(x) + w(e))$.
+2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider $N^{\prime}_{out}(y) \stackrel{\text{def}}{=} N_{out}(y) \cap S_t(u)$. Select $x \in N^{\prime}_{out}(y)$ for which $L_2(x) + w(\langle \overrightarrow{y,x} \rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow (x, L_2(x) + w(e))$.
 3. Let $z \in R_t(u) \setminus S_t(u)$ for which $L_2(z)$ is minimal. Set $S_{t+1}(u) \leftarrow S_t(u) \cup \{z\}$. If $S_{t+1}(u) = V(G)$, stop. Otherwise, $t \leftarrow t+1$, compute $R_t(u)$ again and repeat the previous step.
 
 > PAGE 122 (THEOREM 5.8)
