@@ -19,7 +19,7 @@
     - 4.1 [Euler tours](#41-euler-tours)
     - 4.2 [Hamilton cycles](#42-hamilton-cycles)
 5. [Trees](#chapter-5-trees)
-
+    - 5.1 [Background](#51-background)
 ---
 
 ## Chapter 1: Introduction
@@ -524,4 +524,47 @@ The resulting graph $G^{\ast}$ is Eulerian with minimal weight, for which we the
 
 ## Chapter 5: Trees
 
-> PAGE 107 (BACKGROUND)
+### 5.1 Background
+
+**Trees in transportation networks**
+- Boils down to minimizing transportation costs from a source to multiple destinations (i.e., the cheapest path in a network).
+- *Connector problem*: setting up a communication infrastructure between a collection of nodes but such that the total costs are minimized.
+
+**Trees as data structures**
+- *Rooted trees*: trees with a single vertex designated as root.
+- Example of using trees to represent data: consider the expression:
+
+$$
+x = \displaystyle\frac{-b + \sqrt{b^2-4ac}}{2a}
+$$
+
+- *Leaf nodes* should contain variables and constants; *intermediate nodes* represent operations.
+    - Look up [Infix notation](https://en.wikipedia.org/wiki/Infix_notation) and [Infix To Prefix Notation](https://www.geeksforgeeks.org/dsa/convert-infix-prefix-notation/). 
+
+<br>
+<img src="./img/tree-arithmetic-operations.png">
+<br>
+
+- *Binary trees*: special case of rooted trees, in whichh there are exactly two descendants for each intermediate node.
+
+<br>
+<img src="./img/natural-numbers-binary-tree.png">
+<br>
+
+### 5.2 Fundamentals
+
+<u>**Theorem 5.1**</u>: For any connected (simple) graph $G$ with $n$ vertices and $m$ edges, $n \leq m + 1$.
+
+<u>**Theorem 5.2**</u>: For any tree $T$ with $n$ vertices and $m$ edges, $n = m+1$.
+
+<u>**Theorem 5.3**</u>: A connected graph $G$ with $n$ vertices and $m$ edges for which $n=m+1$ is a tree.
+
+<u>**Theorem 5.4**</u>: A graph $G$ is a tree iff there exists exactly one path between every two vertices $u$ and $v$.
+
+<u>**Theorem 5.5**</u>: An edge $e$ of a graph $G$ is a cut edge iff $e$ is not part of cycle of $G$.
+
+<u>**Theorem 5.6**</u>: A connected graph $G$ is a tree iff every edge is a cut edge.
+
+### 5.3 Spanning trees
+
+> PAGE 116 (SPANNING TREES)
