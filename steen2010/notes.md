@@ -584,4 +584,26 @@ $$
 
 ### 5.4 Routing in communication network
 
-> PAGE 119 (SECTION 5.4)
+> NOTE: A *sink tree* is a tree structure that represents the optimal paths from all nodes to a specific destination node ([source](https://www.tutorialspoint.com/article/sink-tree-in-computer-networks)).
+
+#### Dijkstra's algorithm
+
+<u>**Algorithm 5.2**</u> (Dijkstra's algorithm, sink tree construction): Consider a directed, weighted graph $D$ where weights are nonnegative, and a vertex $u \in V(D)$. We introduce the following sets and labels:
+- Let $S_t(u)$ be the set of vertices from which a shortest path to vertex $u$ has been found after step $t$.
+- Each vertex $v$ is assigned a label $\mathbf{L}(v) \stackrel{\text{def}}{=} \big(L_1(v), L_2(v)\big)$ in which $L_1(v)$ is the vertex succeeding $v$ in the shortest $(v,u)$-path found so far, and $L_2(v)$ the total weight of the path.
+- Let $R_t(u) \stackrel{\text{def}}{=} S_t(u) \cup_{v \in S_t(u)} N_{in}(v)$.
+
+1. Initialize $t \leftarrow 0$ and $S_0(t) \leftarrow \{u\}$. Furthermore, for all $v \in V(G)$:
+
+$$
+\mathbf{L}(v) \leftarrow
+\begin{cases}
+(u, 0) & \text{if } v = u \\
+(-, \infty) & \text{otherwise}
+\end{cases}
+$$
+
+2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider $N'_{out}(y) \stackrel{\text{def}}{=} N_{out}(y) \cap S_t(u)$. Select $x \in N'_{out}(y)$ for which $L_2(x) + w(\langle \overrightarrow{y,x} \rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow (x, L_2(x) + w(e))$.
+3. Let $z \in R_t(u) \setminus S_t(u)$ for which $L_2(z)$ is minimal. Set $S_{t+1}(u) \leftarrow S_t(u) \cup \{z\}$. If $S_{t+1}(u) = V(G)$, stop. Otherwise, $t \leftarrow t+1$, compute $R_t(u)$ again and repeat the previous step.
+
+> PAGE 122 (THEOREM 5.8)
