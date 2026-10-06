@@ -20,6 +20,10 @@
     - 4.2 [Hamilton cycles](#42-hamilton-cycles)
 5. [Trees](#chapter-5-trees)
     - 5.1 [Background](#51-background)
+    - 5.2 [Fundamentals](#52-fundamentals)
+    - 5.3 [Spanning trees](#53-spanning-trees)
+    - 5.4 [Routing in communication network](#54-routing-in-communication-network)
+
 ---
 
 ## Chapter 1: Introduction
@@ -567,4 +571,17 @@ $$
 
 ### 5.3 Spanning trees
 
-> PAGE 116 (SPANNING TREES)
+**Spanning tree**: an acyclic connected subgraph containing all vertices.
+
+<u>**Algorithm 5.1**</u> ([Kruskal's algorithm](https://en.wikipedia.org/wiki/Kruskal%27s_algorithm)): Consider a weighted graph $G$ where each edge $e$ has been assigned a real-valued weights $w(e) \in \mathbb{R}$.
+
+1. Suppose that edges $E_k = \{e_1, e_2, ..., e_k\}$ have been chosen so far. Choose a next edge $e_{k+1}$ from  $E(G) \setminus E_k$ such that the following two conditions are met:
+    - (1) The induced subgraph $G_{k+1} = G\big[\{ e_1, e_2, ..., e_k\}\big]$ is acyclic.
+    - (2) The weight $w(e_{k+1})$ is minimal, i.e., $\forall e \in E(G) \setminus E_k: w(e) \geq w(e_{k+1})$.
+2. Stop when there is no more edge to select in the previous step.
+    
+<u>**Theorem 5.7**</u>: Consider a weighted graph $G$ with $n$ vertices. Any spanning tree $T_{\text{Kruskal}}$ of $G$ constructed by Kruskal's algorithm has minimal weight.
+
+### 5.4 Routing in communication network
+
+> PAGE 119 (SECTION 5.4)
