@@ -651,4 +651,7 @@ While more elegant and decentralized than Dijkstra's algorithm, Bellman-Ford sol
 
 ### 6.1 Vertex degrees
 
+#### Degree distribution
+
+
 > PAGE 134 (SECTION 6.1)
