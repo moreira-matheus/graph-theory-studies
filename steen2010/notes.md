@@ -23,6 +23,8 @@
     - 5.2 [Fundamentals](#52-fundamentals)
     - 5.3 [Spanning trees](#53-spanning-trees)
     - 5.4 [Routing in communication network](#54-routing-in-communication-network)
+6. [Network analysis](#chapter-6-network-analysis)
+    - 6.1 [Vertex degrees](#61-vertex-degrees)
 
 ---
 
@@ -579,7 +581,7 @@ $$
     - (1) The induced subgraph $G_{k+1} = G\big[\{ e_1, e_2, ..., e_k\}\big]$ is acyclic.
     - (2) The weight $w(e_{k+1})$ is minimal, i.e., $\forall e \in E(G) \setminus E_k: w(e) \geq w(e_{k+1})$.
 2. Stop when there is no more edge to select in the previous step.
-    
+
 <u>**Theorem 5.7**</u>: Consider a weighted graph $G$ with $n$ vertices. Any spanning tree $T_{\text{Kruskal}}$ of $G$ constructed by Kruskal's algorithm has minimal weight.
 
 ### 5.4 Routing in communication network
@@ -606,4 +608,47 @@ $$
 2. For each vertex $y \in R_t(u) \setminus S_t(u)$, consider $N^{\prime}_{out}(y) \stackrel{\text{def}}{=} N_{out}(y) \cap S_t(u)$. Select $x \in N^{\prime}_{out}(y)$ for which $L_2(x) + w(\langle \overrightarrow{y,x} \rangle)$ is minimal. Set $\mathbf{L}(y) \leftarrow (x, L_2(x) + w(e))$.
 3. Let $z \in R_t(u) \setminus S_t(u)$ for which $L_2(z)$ is minimal. Set $S_{t+1}(u) \leftarrow S_t(u) \cup \{z\}$. If $S_{t+1}(u) = V(G)$, stop. Otherwise, $t \leftarrow t+1$, compute $R_t(u)$ again and repeat the previous step.
 
-> PAGE 122 (THEOREM 5.8)
+<u>**Theorem 5.8**</u>: Given a weighted directed graph $D$. When applying Dijkstra's algorithm to a vertex $u$, each time a vertex $z$ is added to the set $S_t(u)$, $L_2(z)$ corresponds to the length of a shortest $(z,u)$-path.
+
+#### The Bellman-Ford Algorithm
+
+Useful for computing optimal sink trees *without* having to know the topology in advance.
+
+Let $d^{t}(i,j)$ denote the total weight of the optimal $(v_i, v_j)$-path that vertex $v_i$ has found after iteration $t$ (aka **routing cost**).
+
+Initially:
+
+$$
+d^{0}(i,j) \leftarrow
+\begin{cases}
+0 & \text{if } i=j \\
+\infty & \text{otherwise}
+\end{cases}
+$$
+
+Then:
+
+$$
+d^{t+1}(i,j) \leftarrow \min_{k \in N(v_i)}\big\{ w(v_i,v_k) + d^{t}(k,j) \big\}
+$$
+
+Observations:
+- The [algorithm](https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm) is completely decentralized.
+- [Count-to-infinity problem](https://en.wikipedia.org/wiki/Distance-vector_routing_protocol#Count_to_infinity_problem).
+
+#### A note on algorithmic performance
+
+In most cases, Dijkstra's algorithm will outperform the Bellman-Ford solution.
+- Particularly when the graph is large and has many edges.
+
+Dijkstra's algorithm has computational time roughly proportional to $n^2$. The computational time for Bellman-Ford algorithm is approximately proportional to $n \cdot m$.
+- [Big O Notation](https://en.wikipedia.org/wiki/Big_O_notation).
+
+While more elegant and decentralized than Dijkstra's algorithm, Bellman-Ford solution is still less popular.
+- In situations where weights change too often, and propagation takes more time than the weight changes, Bellman-Ford runs into a real problem.
+
+## Chapter 6: Network Analysis
+
+### 6.1 Vertex degrees
+
+> PAGE 134 (SECTION 6.1)
