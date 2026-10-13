@@ -653,5 +653,43 @@ While more elegant and decentralized than Dijkstra's algorithm, Bellman-Ford sol
 
 #### Degree distribution
 
+**Histogram**:
 
-> PAGE 134 (SECTION 6.1)
+$$
+h(d) \stackrel{\text{def}}{=} |\{ v \in V(G) \mid \delta(v) = d \}|
+$$
+
+- If for some value $D$ we have that $h(d) = 0$ for all $d > D$, we simply discard those $h(d)$.
+- Obviously $\sum_{d=0}^{n-1} h(d) = n$.
+
+**Other techniques**:
+
+- Fraction of vertices that have certain degree: $h(d) / n$
+    - Used to approximate the probability $\mathbb{P}[\delta(u) = d]$ that a vertex $u$ has degree $d$.
+- Plot the degree sequence (sorted in descending order).
+
+#### Degree correlations
+
+**[Assortative mixing](https://en.wikipedia.org/wiki/Assortative_mixing)**: tendency of similar nodes to have links with each other.
+
+**Correlation coefficient**:
+
+<u>**Definition 6.1**</u>: Let $x$ and $y$ be two stochastic variables, for which we have a series of observation pairs $(x_1, y_1), (x_2, y_2), ..., (x_n, y_n)$. The *correlation coefficient* $r(x,y)$ is defined as:
+
+$$
+r(x,y) \stackrel{\text{def}}{=}
+\frac{\sum_{i=1}^{n} \big((x_1 - \bar{x})(y_i - \bar{y})\big)}{\sqrt{\sum_{i=1}^{n} (x_1 - \bar{x})^2} \cdot \sqrt{\sum_{i=1}^{n} (y_1 - \bar{y})^2}}
+$$
+
+where $\bar x$ and $\bar y$ are the averages of $x$ and $y$, respectively.
+
+<u>**Definition 6.2**</u>: Let $G$ be a simple graph with degree sequence $\mathbf{d} = [d_1, d_2, ..., d_n]$ and adjacency matrix $\mathbf{A}$. Let $V(G) = \{v_1, v_2, ..., v_n\}$ be such that $\delta(v_i) = d_i$. The *degree correlation* of $G$ is defined as:
+
+$$
+r_{deg}(G) \stackrel{\text{def}}{=}
+\frac{\sum_{i=1}^{n} \sum_{j=i+1}^{n} \big( (d_i - \bar{d})(d_j - \bar{d})\cdot  \mathbf{A}[i,j] \big)}{\sum_{i=1}^{n} (d_i - \bar{d})^2}
+$$
+
+where $\bar d$ is the average vertex degree.
+
+> PAGE 139 (SCALE FREENESS)
