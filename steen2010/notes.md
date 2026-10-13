@@ -25,6 +25,8 @@
     - 5.4 [Routing in communication network](#54-routing-in-communication-network)
 6. [Network analysis](#chapter-6-network-analysis)
     - 6.1 [Vertex degrees](#61-vertex-degrees)
+    - 6.2 [Distance statistics](#62-distance-statistics)
+    - 6.3 [Clustering coefficient](#63-clustering-coefficient)
 
 ---
 
@@ -691,5 +693,44 @@ r_{deg}(G) \stackrel{\text{def}}{=}
 $$
 
 where $\bar d$ is the average vertex degree.
+
+<u>**Definition 6.3**</u>: Let $G$ be a simple graph with degree sequence $[d_1, d_2, ..., d_n]$ and adjacency matrix $\mathbf{A}$. Let $V(G) = \{ v_1, v_2, ..., v_n\}$ be such that $\delta(v_i) = d_i$. The *scale-freeness* $s(G)$ of $G$ is defined as:
+
+$$
+s(G) = \sum_{i=1}^{n} \sum_{j=i+1}^{n} \big( d_i \cdot d_j \cdot \mathbf{A}[i,j] \big)
+$$
+
+- $s(G)$ is maximal when high-degree vertices are connected to each other.
+
+<u>**Definition 6.4**</u>: Let $G$ be a simple graph with degree sequence $\mathbf{d} = [d_1, d_2, ..., d_n]$ and adjacency matrix $\mathbf{A}$. Let $V(G) = \{ v_1, v_2, ..., v_n\}$ be such that $\delta(v_i) = d_i$. Let $\mathcal{G}(\mathbf{d})$ be the collection of graph with degree sequence $\mathbf{d}$. The *normalized scale-freeness* $S(G)$ of $G$ is defined as:
+
+$$
+S(G) = \frac{\sum_{i=1}^{n} \sum_{j=i+1}^{n} \big( d_i \cdot d_j \big)}{\max \{ s(H) \mid H \in \mathcal{G}(\mathbf{d})\}}
+$$
+
+### 6.2 Distance statistics
+
+<u>**Definition 6.5**</u>: Let $G$ be a directed or undirected graph and $u,v \in V(G)$. The *(geodesic) distance* between $u$ and $v$, denoted as $d(u,v)$, is the length of a shortest $(u,v)$-path.
+
+<u>**Definition 6.6**</u>: Consider a connected graph $G$ and let $d(u,v)$ denote the distance between vertices $u$ and $v$. The *eccentricity* $\epsilon(u)$ of a vertex $u$ in $G$ is defined as $\max\{ d(u,v) \mid v \in V(G) \}$. The *radius* $rad(G)$ is equal to $\min\{ \epsilon(u) \mid u \in V(G) \}$. Finally, the *diameter* of $G$ is the maximal shortest path between any two vertices: $diam(G) = \max\{ d(u,v) \mid u,v \in V(G) \}$.
+- **Eccentricity**: how far the farthest vertex from $u$ is positioned in the network. 
+- **Radius**: indication of how disseparate the vertices in the network are.
+- **Diameter**: the maximal distance in the network.
+
+<u>**Definition 6.7**</u>: Let $G$ be a connected graph with vertex set $V$, and let $\bar{d}(u)$ denote the average length of the shortest paths from vertex $u$ to any other vertex $v$ in $G$:
+
+$$
+\bar{d}(u) \stackrel{\text{def}}{=} \frac{1}{|V|-1} \sum_{v \in V, v\neq u} d(u,v)
+$$
+
+The *average path length* $\bar{d}(G)$ is defined as:
+
+$$
+\bar{d}(G) \stackrel{\text{def}}{=} \frac{1}{|V|} \sum_{u \in V} \bar{d}(u) = \frac{1}{|V|^2 - |V|} \sum_{u,v \in V, u \neq v} d(u,v)
+$$
+
+The *characteristic path length* of $G$ is defined as the median over all $\bar{d}(u)$.
+
+### 6.3 Clustering coefficient
 
 > PAGE 139 (SCALE FREENESS)
