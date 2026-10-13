@@ -733,4 +733,4 @@ The *characteristic path length* of $G$ is defined as the median over all $\bar{
 
 ### 6.3 Clustering coefficient
 
-> PAGE 139 (SCALE FREENESS)
+> PAGE 143 (CLUSTERING COEFFICIENT)
