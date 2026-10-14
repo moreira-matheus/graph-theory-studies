@@ -733,4 +733,12 @@ The *characteristic path length* of $G$ is defined as the median over all $\bar{
 
 ### 6.3 Clustering coefficient
 
-> PAGE 143 (CLUSTERING COEFFICIENT)
+Idea: to what extent are vertices adjacent to $v$ also adjacent to each other?
+
+#### Local view
+
+Considering clustering from the perspective of vertices (loca view), the best clustering is that all neighbors are adjacent to each other, i.e., $N(v)$ is a complete graph.
+
+Let $n_v = |N(v)|$, then we know $N(v)$ will have a maximum of $\binom{n_v}{2} = \frac{1}{2}n_v (n_v - 1)$ edges.
+
+> PAGE 144 (DEFINITION 6.8)
