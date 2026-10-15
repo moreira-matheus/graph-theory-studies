@@ -739,6 +739,52 @@ Idea: to what extent are vertices adjacent to $v$ also adjacent to each other?
 
 Considering clustering from the perspective of vertices (loca view), the best clustering is that all neighbors are adjacent to each other, i.e., $N(v)$ is a complete graph.
 
-Let $n_v = |N(v)|$, then we know $N(v)$ will have a maximum of $\binom{n_v}{2} = \frac{1}{2}n_v (n_v - 1)$ edges.
+Let $n_v = |N(v)|$, then we know $N(v)$ will have a maximum of $\binom{n_v}{2} = \frac{1}{2}n_v (n_v - 1)$ edges. The clustering coefficient is the ratio of the actual number of edges to the attainable maximum.
 
-> PAGE 144 (DEFINITION 6.8)
+<u>**Definition 6.8**</u>: Consider a simple connected, undirected graph $G$ and vertex $v \in V(G)$ with neighboring set $N(v)$. Let $n_v = |N(v)|$ and $m_v$ be the number of edges in the subgraph induced by $N(v)$, i.e., $m_v = |E(G[N(v)])|$. The *clustering coefficient* $cc(v)$ for vertex $v$ with degree $\delta(v)$ as defined as:
+
+$$
+cc(v) \stackrel{\text{def}}{=}
+\begin{cases}
+m_v / \binom{n_v}{2} = \displaystyle\frac{2 m_v}{n_v (n_v -1)} & \text{if } \delta(v) > 1 \\
+\text{undefined} & \text{otherwise}
+\end{cases}
+$$
+
+<u>**Definition 6.9**</u>: Consider a simple connected graph $G$. Let $V^\ast$ denote the set of vertices $\{v \in V(G) \mid \delta(v) > 1\}$. The *clustering coefficient* $CC(G)$ for $G$ is defined as:
+
+$$
+CC(G) \stackrel{\text{def}}{=} displaystyle\frac{1}{|V^\ast|} \sum_{v \in V^\ast} cc(v)
+$$
+
+<u>**Definition 6.10**</u>: Let $D$ be a simple connected, directed graph. Consider vertex $v \in V(D)$ with neighbor set $N(v)$. Let $n_v = |N(v)|$ and $m_v$ be the number of arcs in the subgraph induced by $N(v)$, i.e., $m_v = |A(G[N(v)])|$. The *clustering coefficient* $cc(v)$ for vertex $v$ is defined as:
+
+$$
+cc(v) \stackrel{\text{def}}{=}
+\begin{cases}
+m_v / (2 \cdot \binom{n_v}{2}) = \displaystyle\frac{m_v}{n_v (n_v - 1)} & \text{if } \delta(v) > 1 \\
+\text{undefined} & \text{otherwise}
+\end{cases}
+$$
+
+**Note**: The definition for clustering coefficient of a graph is the same, whether it is directed or undirected.
+
+<u>**Definition 6.11**</u>: Consider a simple weighted undirected graph $G$ with vertex set $V(G) = \{v_1, v_2, ..., v_n\}$ and adjacency matrix $\mathbf{A}$. The *vertex strength* $\sigma(v_i)$ of vertex $v_i$ is defined as the total sum of the weights of edges incident with $v_i$:
+
+$$
+\sigma(v_i) \stackrel{\text{def}}{=} \sum_{j=1}^{n} w(\langle v_i, v_j \rangle) \cdot \mathbf{A}[i,j]
+$$
+
+<u>**Definition 6.12**</u>: Consider a simple weighted undirected graph $G$ with vertex set $V(G) = \{v_1, v_2, ..., v_n\}$ and adjacency matrix $\mathbf{A}$. The *weighted clustering coefficient* $cc(v_i)$ of vertex $v_i$ is defined as:
+
+$$
+cc(v_i) \stackrel{\text{def}}{=}
+\begin{cases}
+\displaystyle\frac{\displaystyle\sum_{e_i, e_j, e_k \in E(G)} (w(e_{i,j}) + w(e_{j,k})) \cdot \mathbf{A}[i,j] \cdot \mathbf{A}[i,k] \cdot \mathbf{A}[j,k]}{2 \sigma(v_i)\big( \delta(v_i) - 1 \big)} & \text{if } \delta(v_i) > 1\\
+\text{undefined} & \text{otherwise}
+\end{cases}
+$$
+
+#### Global view
+
+> PAGE 146 (GLOBAL VIEW)
