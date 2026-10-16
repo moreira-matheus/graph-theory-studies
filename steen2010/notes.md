@@ -754,7 +754,7 @@ $$
 <u>**Definition 6.9**</u>: Consider a simple connected graph $G$. Let $V^\ast$ denote the set of vertices $\{v \in V(G) \mid \delta(v) > 1\}$. The *clustering coefficient* $CC(G)$ for $G$ is defined as:
 
 $$
-CC(G) \stackrel{\text{def}}{=} displaystyle\frac{1}{|V^\ast|} \sum_{v \in V^\ast} cc(v)
+CC(G) \stackrel{\text{def}}{=} \displaystyle\frac{1}{|V^\ast|} \sum_{v \in V^\ast} cc(v)
 $$
 
 <u>**Definition 6.10**</u>: Let $D$ be a simple connected, directed graph. Consider vertex $v \in V(D)$ with neighbor set $N(v)$. Let $n_v = |N(v)|$ and $m_v$ be the number of arcs in the subgraph induced by $N(v)$, i.e., $m_v = |A(G[N(v)])|$. The *clustering coefficient* $cc(v)$ for vertex $v$ is defined as:
